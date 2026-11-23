@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Te invito al cine 🐢🪼</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#f4f9ff;--gold:#ffd86b;--cy:#46d4ff;--pk:#ff8fc2;--vi:#8a6bff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:#070b24;color:var(--ink);font-family:'Nunito',system-ui,sans-serif;overflow:hidden;position:relative}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;animation:drift 12s ease-in-out infinite alternate}
+.b1{width:340px;height:340px;background:var(--cy);top:-90px;left:-90px}
+.b2{width:380px;height:380px;background:var(--vi);bottom:-120px;right:-100px;animation-delay:-4s}
+.b3{width:260px;height:260px;background:var(--pk);top:40%;left:55%;opacity:.3;animation-delay:-8s}
+@keyframes drift{to{transform:translate(40px,60px) scale(1.15)}}
+.star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;animation:tw 3s ease-in-out infinite}
+@keyframes tw{50%{opacity:.15;transform:scale(.6)}}
+.fl{position:absolute;bottom:-40px;animation:up linear infinite;opacity:.8}
+@keyframes up{to{transform:translateY(-115vh) translateX(25px) rotate(15deg);opacity:0}}
+.stage{position:relative;z-index:3;height:100%;max-width:440px;margin:0 auto;padding:18px 22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.scene{position:relative;width:100%;height:120px}
+.emo{position:absolute;top:0;font-size:78px;line-height:1}
+.jelly{left:-25%;filter:hue-rotate(-20deg) saturate(2.4) drop-shadow(0 0 20px #2aa8ff);animation:jin 1.4s .2s cubic-bezier(.2,.9,.3,1.2) forwards,bob 3s 1.8s ease-in-out infinite}
+.turtle{right:-25%;filter:drop-shadow(0 0 18px rgba(120,255,170,.6));animation:tin 1.4s .5s cubic-bezier(.2,.9,.3,1.2) forwards,bob 3.4s 2s ease-in-out infinite reverse}
+@keyframes jin{to{left:calc(50% - 92px)}}
+@keyframes tin{to{right:calc(50% - 92px)}}
+@keyframes bob{50%{transform:translateY(-12px) rotate(-5deg)}}
+.heart{position:absolute;left:50%;top:26px;font-size:34px;opacity:0;animation:pop .6s 1.9s forwards,beat 1.1s 2.6s infinite}
+@keyframes pop{from{transform:translateX(-50%) scale(0);opacity:0}to{transform:translateX(-50%) scale(1);opacity:1}}
+@keyframes beat{50%{transform:translateX(-50%) scale(1.25)}}
+.t{opacity:0;transform:translateY(14px);animation:show .7s forwards}
+@keyframes show{to{opacity:1;transform:none}}
+.hi{font-family:'Fredoka',sans-serif;font-size:24px;font-weight:600;margin-top:6px;animation-delay:2.2s}
+h1{font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(32px,9.5vw,46px);line-height:1.05;margin:6px 0 4px;animation-delay:2.7s;background:linear-gradient(90deg,var(--gold),var(--pk),var(--cy));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{font-size:17px;opacity:.9;animation-delay:3.2s}
+.ticket{width:100%;margin-top:18px;opacity:0;transform:translateY(20px) rotate(-2deg);animation:tk .9s 3.7s cubic-bezier(.2,.9,.3,1.2) forwards}
+@keyframes tk{to{opacity:1;transform:none}}
+.top,.bot{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);position:relative}
+.top{border-radius:22px 22px 0 0;padding:16px 18px 20px;
+-webkit-mask:radial-gradient(circle 13px at 0 100%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 13px at 100% 100%,#0000 98%,#000) right/51% 100% no-repeat;
+mask:radial-gradient(circle 13px at 0 100%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 13px at 100% 100%,#0000 98%,#000) right/51% 100% no-repeat}
+.bot{border-radius:0 0 22px 22px;padding:20px 18px 14px;font-weight:700;font-size:15px;line-height:1.45;
+-webkit-mask:radial-gradient(circle 13px at 0 0,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 13px at 100% 0,#0000 98%,#000) right/51% 100% no-repeat;
+mask:radial-gradient(circle 13px at 0 0,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 13px at 100% 0,#0000 98%,#000) right/51% 100% no-repeat}
+.bot::before{content:'';position:absolute;top:0;left:16px;right:16px;border-top:2px dashed rgba(255,255,255,.4)}
+.day{font-size:15px;font-weight:800;opacity:.9}
+.hour{font-family:'Fredoka',sans-serif;font-size:50px;font-weight:700;line-height:1.1;color:var(--gold)}
+.sala{font-weight:800;font-size:16px}
+.bot small{display:block;font-weight:600;opacity:.85}
+button{margin-top:20px;border:0;border-radius:999px;padding:14px 38px;font:700 19px 'Fredoka',sans-serif;color:#1a1040;background:linear-gradient(90deg,var(--gold),var(--pk));cursor:pointer;opacity:0;transform:translateY(14px);animation:show .7s 4.6s forwards,pulse 1.7s 5.4s infinite}
+button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,143,194,.7)}100%{box-shadow:0 0 0 16px rgba(255,143,194,0)}}
+.yes{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:rgba(7,11,36,.9);font-family:'Fredoka',sans-serif;font-size:32px;font-weight:700;z-index:5;text-align:center;padding:20px}
+.yes.on{display:flex}
+.yes span{font-size:64px;animation:beat2 .9s infinite}
+@keyframes beat2{50%{transform:scale(1.2)}}
+.conf{position:absolute;top:-30px;font-size:26px;animation:fall 3.2s linear infinite;z-index:6;pointer-events:none}
+@keyframes fall{to{transform:translateY(112vh) rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-delay:0s!important;animation-iteration-count:1!important}}
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<div class="stage">
+  <div class="scene"><div class="emo jelly">🪼</div><div class="emo turtle">🐢</div><div class="heart">💙</div></div>
+  <div class="hi t">Hola, mi vida 💙</div>
+  <h1 class="t">Te invito a ver Los Juegos del Hambre</h1>
+  <div class="sub t">Amanecer en la Cosecha, con tu novio 🪼</div>
+  <div class="ticket">
+    <div class="top"><div class="day">Hoy · lunes 23 de noviembre</div><div class="hour">15:30</div><div class="sala">Sala 5 🍿</div></div>
+    <div class="bot">Cinemark Outlet Arauco Arequipa<small>Av. Lambramani 325, Sector 2</small></div>
+  </div>
+  <button id="go">¡Sí, vamos! 🐢</button>
+</div>
+<div class="yes" id="yes"><span>🪼💙🐢</span>¡Nos vemos en el cine!</div>
+<script>
+(function(){
+  var s=document.body,i,e;
+  for(i=0;i<40;i++){e=document.createElement('div');e.className='star';e.style.cssText='left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;animation-delay:'+Math.random()*3+'s;animation-duration:'+(2+Math.random()*3)+'s';s.appendChild(e);}
+  var h=['💙','🫧','✨','💙'];
+  for(i=0;i<12;i++){e=document.createElement('div');e.className='fl';e.textContent=h[i%4];e.style.cssText='left:'+Math.random()*100+'%;font-size:'+(14+Math.random()*16)+'px;animation-duration:'+(9+Math.random()*8)+'s;animation-delay:'+Math.random()*8+'s';s.appendChild(e);}
+  document.getElementById('go').addEventListener('click',function(){
+    document.getElementById('yes').classList.add('on');
+    var m=['🐢','🪼','💙','🍿','🎬'];
+    for(var j=0;j<26;j++){var c=document.createElement('div');c.className='conf';c.textContent=m[j%5];c.style.left=Math.random()*100+'%';c.style.animationDelay=Math.random()*2+'s';s.appendChild(c);}
+  });
+})();
+</script>
+</body>
+</html>
